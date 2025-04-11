@@ -1,0 +1,20 @@
+{{!< layout }} <!-- This tells Handlebars to use layout.hbs if you're using layouts -->
+
+<h2>Login</h2>
+{{#if error_msg}}
+  <p style="color: red">{{error_msg}}</p>
+{{/if}}
+
+<form action="/auth/login" method="POST">
+  <div>
+    <label>Email</label>
+    <input type="email" name="email" required>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" name="password" required>
+  </div>
+  <button type="submit">Login</button>
+</form>
+
+<p>Don't have an account? <a href="/auth/register">Register</a></p>

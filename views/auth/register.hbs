@@ -1,0 +1,35 @@
+<h2>Register</h2>
+
+{{#if errors}}
+  <ul>
+    {{#each errors}}
+      <li style="color:red;">{{this.msg}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<form action="/auth/register" method="POST">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" value="{{username}}" required>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" value="{{email}}" required>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+  </div>
+
+  <div>
+    <label for="password2">Confirm Password</label>
+    <input type="password" name="password2" id="password2" required>
+  </div>
+
+  <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? <a href="/auth/login">Login</a></p>
